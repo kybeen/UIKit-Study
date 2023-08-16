@@ -24,3 +24,7 @@ Learners create a new project in the first tutorial. The icon file for the tutor
 - compositional layout을 사용하여 컬렌션 뷰 모양을 구성해봅니다.
 - compositional layout을 사용하면 sections, groups 및 items와 같은 다양한 컴포넌트를 결합하여 뷰를 구성할 수 있습니다.
 - section은 item들의 group을 둘러싸고 있는 외부 컨테이너 뷰를 나타냅니다.
+
+## **Section 5. Configure the data source**
+- 이 섹션에서는 컬렉션 뷰에 셀을 등록하고, content configuration을 사용하여 셀의 모양을 정의하고, 셀을 데이터 소스에 연결합니다.
+- 데이터가 변경될 때 사용자 인터페이스를 업데이트하고 애니메이션화하는 diffable 데이터 소스를 사용할 것입니다.
