@@ -10,6 +10,7 @@ import UIKit
 class ReminderListViewController: UICollectionViewController {
     /// typealias는 기존 타입을 표현력이 더 좋은 이름으로 사용하고자 할 때 쓰입니다.
     typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
     
     var dataSource: DataSource!
 
@@ -33,6 +34,13 @@ class ReminderListViewController: UICollectionViewController {
         dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
+        
+        var snapshot = Snapshot()
+        snapshot.appendSections([0]) // section 1개 스냅샷에 추가
+        snapshot.appendItems(Reminder.sampleData.map { $0.title }) // 리마인더 샘플 데이터의 제목들을 스냅샷에 넣어준다.
+        dataSource.apply(snapshot) // 스냅샷을 데이터소스에 적용
+        
+        collectionView.dataSource = dataSource // 데이터소스를 콜렉션 뷰에 적용
     }
 
     // MARK: - 그룹화된 모양으로 새 리스트 구성 변수를 만드는 메서드
