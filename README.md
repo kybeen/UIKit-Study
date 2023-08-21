@@ -5,5 +5,5 @@
 ## **Creating a list view**
 https://developer.apple.com/tutorials/app-dev-training/creating-a-list-view
 
-## **Adopting collection views**
+## **Displaying cell info**
 https://developer.apple.com/tutorials/app-dev-training/adopting-collection-views

@@ -13,8 +13,10 @@ Use this project to code along with [Displaying Cell Info](https://developer.app
 ## **Section 1. Format the date and time**
 - 이 섹션에서는 모든 유저의 로케일에 정확한 날자와 시간을 제공할 수 있도록 Foundation 프레임워크의 date-formatting API를 사용해봅니다.
 
-## **Section 2. **
-- 
+## **Section 2. Organize view controllers**
+- 이 섹션에서는 데이터 소스 관련 동작을 별도의 파일로 추출하여 라마인더 리스트 뷰 컨트롤러의 역할을 구성할 것입니다. 그런 다음, 새로운 데이터 소스를 사용하여 리마인더의 날짜와 시간을 표시하는 리스트 셀을 구성해봅니다.
+  - 뷰 컨트롤러는 UIKit 앱에서 많은 역할을 맡고 있기 때문에, 파일의 크기가 커질 수 있습니다.
+  - 뷰 컨트롤러를 별도의 파일과 익스텐션으로 재구성하면 유지보수가 용이해집니다.
 
 ## **Section 3. **
 - 
