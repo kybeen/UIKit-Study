@@ -17,6 +17,16 @@ struct Reminder: Identifiable {
     var isComplete: Bool = false
 }
 
+// MARK: - Reminder의 배열에 대한 익스텐션
+extension [Reminder] {
+    func indexOfReminder(withId id: Reminder.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
+}
+
 /**
  \#if DEBUG 플래그는 출시를 위해 앱을 빌드할 때 동봉된 코드가 컴파일되는 것을 방지하는 컴파일 지침입니다.
  디버그 빌드에서 코드를 테스트하거나 샘플 테스트 데이터를 제공하는데 이 플래그를 사용할 수 있습니다.
