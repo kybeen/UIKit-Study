@@ -18,14 +18,16 @@ Use this project to code along with [Displaying Cell Info](https://developer.app
   - 뷰 컨트롤러는 UIKit 앱에서 많은 역할을 맡고 있기 때문에, 파일의 크기가 커질 수 있습니다.
   - 뷰 컨트롤러를 별도의 파일과 익스텐션으로 재구성하면 유지보수가 용이해집니다.
 
+<div style="text-align: center;">
+    <img src="https://github.com/kybeen/UIKit-Study/assets/89764127/e4ca5306-c90e-4911-8d7e-7d550ce411db" alt="리스트 셀 구성" width="150">
+</div>
+
 ## **Section 3. Change the cell background color**
 - 이 섹션에서는 초심자 프로젝트에서 찾을 수 있는 몇 가지 미리 정의된 색을 사용하여 리마인더 리스트 셀의 배경 색상을 사용자 배경 색상을 사용자 정의할 수 있습니다.
 
-## **Section 4. **
-- 
+## **Section 4. Display the reminder complete status**
+- 리스트의 각 리마인더에 대해 원 모양의 버튼을 추가해볼 것입니다. 이 버튼은 각 리마안더에 대한 완전하거나 불완전한 상태의 지표 역할을 합니다.
 
-## **Section 5. **
-- 
-
-## **Section 6. **
-- 
+<div style="text-align: center;">
+    <img src="https://github.com/kybeen/UIKit-Study/assets/89764127/02c1a1ad-92cb-480d-b66e-cd85c1a36567" alt="리마인더 완료 상태 심볼 추가" width="150">
+</div>
