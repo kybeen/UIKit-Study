@@ -18,8 +18,8 @@ Use this project to code along with [Displaying Cell Info](https://developer.app
   - 뷰 컨트롤러는 UIKit 앱에서 많은 역할을 맡고 있기 때문에, 파일의 크기가 커질 수 있습니다.
   - 뷰 컨트롤러를 별도의 파일과 익스텐션으로 재구성하면 유지보수가 용이해집니다.
 
-## **Section 3. **
-- 
+## **Section 3. Change the cell background color**
+- 이 섹션에서는 초심자 프로젝트에서 찾을 수 있는 몇 가지 미리 정의된 색을 사용하여 리마인더 리스트 셀의 배경 색상을 사용자 배경 색상을 사용자 정의할 수 있습니다.
 
 ## **Section 4. **
 - 
