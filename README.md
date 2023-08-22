@@ -7,3 +7,6 @@ https://developer.apple.com/tutorials/app-dev-training/creating-a-list-view
 
 ## **Displaying cell info**
 https://developer.apple.com/tutorials/app-dev-training/adopting-collection-views
+
+## **Making reminders identifiable**
+https://developer.apple.com/tutorials/app-dev-training/making-reminders-identifiable

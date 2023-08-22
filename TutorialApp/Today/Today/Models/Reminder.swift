@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Reminder {
+struct Reminder: Identifiable {
+    /// Identifiable 프로토콜을 준수할 경우 반드시 id 프로퍼티를 포함하고 있어야 합니다.
+    /// Foundation 프레임워크의 UUID 구조체는 보편적으로 unique한 값을 만들어줍니다.
+    var id: String = UUID().uuidString
     var title: String
     var dueDate: Date
     var notes: String? = nil

@@ -10,6 +10,7 @@ import UIKit
 class ReminderListViewController: UICollectionViewController {
     
     var dataSource: DataSource!
+    var reminders: [Reminder] = Reminder.sampleData
 
     /// 뷰 컨트롤러가 뷰 계층 구조를 메모리에 로드한 후, 시스템은 viewDidLoad()를 호출합니다.
     override func viewDidLoad() {
@@ -23,13 +24,16 @@ class ReminderListViewController: UICollectionViewController {
         // 셀의 내용과 모양을 어떻게 구성할지 지정해줍니다.
         let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
-        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+        dataSource = DataSource(collectionView: collectionView) {
+            /// Reminder.ID는 Identifiable 프로토콜과 관련된 타입입니다.
+            /// Reminder의 경우에는 String의 type alias입니다.
+            (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder.ID) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
         var snapshot = Snapshot()
         snapshot.appendSections([0]) // section 1개 스냅샷에 추가
-        snapshot.appendItems(Reminder.sampleData.map { $0.title }) // 리마인더 샘플 데이터의 제목들을 스냅샷에 넣어준다.
+        snapshot.appendItems(reminders.map { $0.id }) // reminder 배열을 사용해서 스냅샷을 구성해줍니다. 식별자 배열을 만들기 위해 제목 대신 id 프로퍼티에 맵핑해줍니다.
         dataSource.apply(snapshot) // 스냅샷을 데이터소스에 적용
         
         collectionView.dataSource = dataSource // 데이터소스를 콜렉션 뷰에 적용
