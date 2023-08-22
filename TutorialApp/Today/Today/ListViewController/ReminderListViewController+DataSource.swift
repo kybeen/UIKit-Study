@@ -14,6 +14,14 @@ extension ReminderListViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
+    // MARK: - 버튼에 대한 접근성 값
+    var reminderCompletedValue: String {
+        NSLocalizedString("Completed", comment: "Reminder completed value")
+    }
+    var reminderNotCompletedValue: String {
+        NSLocalizedString("Not completed", comment: "Reminder not completed value")
+    }
+    
     // MARK: - UI에 반영되도록 스냅샷을 업데이트해주는 메서드
     func updateSnapshot(reloading ids: [Reminder.ID] = []) { // 빈 배열을 매개변수의 기본값으로 지정하면 식별자를 제공하지 않고도 viewDidLoad()에서 메서드를 호출할 수 있습니다.
         var snapshot = Snapshot()
@@ -36,6 +44,8 @@ extension ReminderListViewController {
         
         var doneButtonConfiguration = doneButtonConfiguration(for: reminder)
         doneButtonConfiguration.tintColor = .todayListCellDoneButtonTint
+        cell.accessibilityCustomActions = [doneButtonAccessibilityAction(for: reminder)]
+        cell.accessibilityValue = reminder.isComplete ? reminderCompletedValue : reminderNotCompletedValue
         cell.accessories = [
             .customView(configuration: doneButtonConfiguration), .disclosureIndicator(displayed: .always)
         ]
@@ -64,6 +74,17 @@ extension ReminderListViewController {
         reminder.isComplete.toggle() // 완료 상태로 변경
         updateReminder(reminder) // 리마인더에 반영
         updateSnapshot(reloading: [id]) // UI에 반영하기 위해 스냅샷 업데이트
+    }
+    
+    private func doneButtonAccessibilityAction(for reminder: Reminder) -> UIAccessibilityCustomAction {
+        /// VoiceOver는 객체에 대한 action을 사용할 수 있을 때 사용자에게 알려줍니다.(alert) 사용자가 옵션을 듣기로 결정하면, VoiceOver는 각 action의 이름을 읽어줍니다.
+        let name = NSLocalizedString("Toggle completion", comment: "Reminder done button accessibility label") // 액션의 이름을 생성해줍니다.
+        /// 기본적으로, 클로저는 내부에서 사용하는 외부 값에 대한 강력한 참조를 생성합니다. 뷰 컨트롤러에 대해 약한 참조를 지정해주면 유지 사이클(retain cycle)을 방지해줍니다.
+        let action = UIAccessibilityCustomAction(name: name) { [weak self] action in
+            self?.completeReminder(withID: reminder.id)
+            return true
+        }
+        return action
     }
     
     // MARK: - 완료 여부 버튼 구성 메서드

@@ -52,8 +52,9 @@ Use this project to code along with [Making Reminders Identifiable](https://deve
 </div>
 
 
-## **Section 6. **
-- 
+## **Section 6. Make the action accessible**
+- 잘 설계된 iOS 앱은 능력에 상관 없이 모든 사용자가 액세스할 수 있습니다.
+- 이 섹션에서는 VoiceOver 및 기타 보조 도구 사용자가 완료 버튼을 탭하지 않고도 알림을 완료로 표시할 수 있도록 각 셀에 접근성 작업을 추가해봅니다. 또한 VoiceOver가 사용자에게 리마인더의 완료 상태를 읽을 수 있도록 접근성 값을 추가해봅니다.
 
 <div style="text-align: center;">
     <img src="" alt="" width="300">
