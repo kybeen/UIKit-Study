@@ -14,6 +14,18 @@ extension ReminderListViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
+    // MARK: - UI에 반영되도록 스냅샷을 업데이트해주는 메서드
+    func updateSnapshot(reloading ids: [Reminder.ID] = []) { // 빈 배열을 매개변수의 기본값으로 지정하면 식별자를 제공하지 않고도 viewDidLoad()에서 메서드를 호출할 수 있습니다.
+        var snapshot = Snapshot()
+        snapshot.appendSections([0]) // section 1개 스냅샷에 추가
+        snapshot.appendItems(reminders.map { $0.id }) // reminder 배열을 사용해서 스냅샷을 구성해줍니다. 식별자 배열을 만들기 위해 제목 대신 id 프로퍼티에 맵핑해줍니다.
+        // 배열이 비어 있지 않다면, 스냅샷에 식별자에 대한 리마인더를 다시 로드하도록 해줍니다.
+        if !ids.isEmpty {
+            snapshot.reloadItems(ids)
+        }
+        dataSource.apply(snapshot) // 스냅샷을 데이터소스에 적용
+    }
+    
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
         let reminder = reminder(withId: id) // item에 해당하는 리마인더를 검색합니다.
         var contentConfiguration = cell.defaultContentConfiguration() // 미리 정의된 시스템 스타일로 콘텐츠 구성을 만듭니다.
@@ -51,6 +63,7 @@ extension ReminderListViewController {
         var reminder = reminder(withId: id) // 리마인더를 불러오기
         reminder.isComplete.toggle() // 완료 상태로 변경
         updateReminder(reminder) // 리마인더에 반영
+        updateSnapshot(reloading: [id]) // UI에 반영하기 위해 스냅샷 업데이트
     }
     
     // MARK: - 완료 여부 버튼 구성 메서드

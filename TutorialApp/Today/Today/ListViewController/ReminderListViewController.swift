@@ -31,10 +31,7 @@ class ReminderListViewController: UICollectionViewController {
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
-        var snapshot = Snapshot()
-        snapshot.appendSections([0]) // section 1개 스냅샷에 추가
-        snapshot.appendItems(reminders.map { $0.id }) // reminder 배열을 사용해서 스냅샷을 구성해줍니다. 식별자 배열을 만들기 위해 제목 대신 id 프로퍼티에 맵핑해줍니다.
-        dataSource.apply(snapshot) // 스냅샷을 데이터소스에 적용
+        updateSnapshot()
         
         collectionView.dataSource = dataSource // 데이터소스를 콜렉션 뷰에 적용
     }

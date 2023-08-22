@@ -43,11 +43,12 @@ Use this project to code along with [Making Reminders Identifiable](https://deve
 </div>
 
 
-## **Section 5. **
-- 
+## **Section 5. Update the snapshot**
+- diffable 데이터 소스로 작업할 때, 데이터가 변경되면 스냅샷을 적용하여 UI를 업데이트합니다.
+- 이 섹션에서는 사용자가 완료 버튼을 탭할 때 새 스냅샷을 만들고 적용하도록 해줍니다.
 
 <div style="text-align: center;">
-    <img src="" alt="" width="300">
+    <img src="https://github.com/kybeen/UIKit-Study/assets/89764127/92322019-fba4-41be-b9e6-f718d056dfc5" alt="" width="300">
 </div>
 
 
