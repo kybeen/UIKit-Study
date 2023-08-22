@@ -57,15 +57,16 @@ Use this project to code along with [Making Reminders Identifiable](https://deve
 - 이 섹션에서는 VoiceOver 및 기타 보조 도구 사용자가 완료 버튼을 탭하지 않고도 알림을 완료로 표시할 수 있도록 각 셀에 접근성 작업을 추가해봅니다. 또한 VoiceOver가 사용자에게 리마인더의 완료 상태를 읽을 수 있도록 접근성 값을 추가해봅니다.
 
 <div style="text-align: center;">
-    <img src="" alt="" width="300">
+    <img src="https://github.com/kybeen/UIKit-Study/assets/89764127/b5ff6547-f4be-429b-9b5e-59c1d165cc0f" alt="" width="300">
 </div>
 
 
-## **Section 7. **
-- 
+## **Section 7. Preview using the Accessibility Inspector**
+- Accessibility Inspector tool을 사용하면 앱의 접근성 문제를 식별 및 해결하고, VoiceOber를 에뮬레이트하고, UI를 탐색할 수도 있습니다.
+- 이 섹션에서는 Accessibility Inspector tool을 사용하여 셀의 접근성 값을 보고 접근성 액션을 수행해봅니다.
 
 <div style="text-align: center;">
-    <img src="" alt="" width="300">
+    <img src="https://github.com/kybeen/UIKit-Study/assets/89764127/69cd2957-3a12-43fc-ad13-33ff3c4ab4a8" alt="" width="300">
 </div>
 
 
