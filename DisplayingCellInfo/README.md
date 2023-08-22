@@ -20,8 +20,7 @@ Use this project to code along with [Displaying Cell Info](https://developer.app
 
 ## **Section 3. Change the cell background color**
 - 이 섹션에서는 초심자 프로젝트에서 찾을 수 있는 몇 가지 미리 정의된 색을 사용하여 리마인더 리스트 셀의 배경 색상을 사용자 배경 색상을 사용자 정의할 수 있습니다.
-<img src="https://github.com/kybeen/UIKit-Study/assets/89764127/02c1a1ad-92cb-480d-b66e-cd85c1a36567" alt="리마인더 완료 상태 심볼 추가" width="100">
-![Simulator Screenshot - iPhone 14 Pro - 2023-08-22 at 09 50 08](https://github.com/kybeen/UIKit-Study/assets/89764127/ffadb240-7a67-4469-988a-15ab22df63d1)
+<img src="https://github.com/kybeen/UIKit-Study/assets/89764127/02c1a1ad-92cb-480d-b66e-cd85c1a36567" alt="리마인더 완료 상태 심볼 추가" width="50">
 
 ## **Section 4. **
 - 
