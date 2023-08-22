@@ -16,8 +16,8 @@ Use this project to code along with [Making Reminders Identifiable](https://deve
 ## **Section 2. Create functions for accessing the model**
 - 이 섹션에서는 리마인더의 식별자를 사용하여 리마인더 배열의 개별 항목을 검색하고 업데이트하는 함수를 작성합니다.
 
-## **Section 3. **
-- 
+## **Section 3. Craete a custom button action**
+- 이 섹션에서는 사용자가 완료 버튼을 탭할 때 리마인더의 상태를 업데이트하는 코드를 작성하여 Today 앱을 더 인터랙티브하게 만들기 시작할 것입니다.
 
 ## **Section 4. **
 - 

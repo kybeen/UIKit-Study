@@ -46,6 +46,13 @@ extension ReminderListViewController {
         reminders[index] = reminder
     }
     
+    // MARK: - 버튼을 누르면 리마인더를 완료 상태로 바꿔주는 메서드
+    func completeReminder(withID id: Reminder.ID) {
+        var reminder = reminder(withId: id) // 리마인더를 불러오기
+        reminder.isComplete.toggle() // 완료 상태로 변경
+        updateReminder(reminder) // 리마인더에 반영
+    }
+    
     // MARK: - 완료 여부 버튼 구성 메서드
     private func doneButtonConfiguration(for reminder: Reminder) -> UICellAccessory.CustomViewConfiguration {
         let symbolName = reminder.isComplete ? "circle.fill" : "circle"
