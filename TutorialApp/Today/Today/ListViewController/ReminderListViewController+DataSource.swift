@@ -58,7 +58,10 @@ extension ReminderListViewController {
         let symbolName = reminder.isComplete ? "circle.fill" : "circle"
         let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1) // symbol은 이미지이지만 텍스트처럼 글꼴 스타일과 같은 다양한 특성을 지원해줍니다.
         let image = UIImage(systemName: symbolName, withConfiguration: symbolConfiguration)
-        let button = UIButton()
+        let button = ReminderDoneButton()
+        // 버튼의 .touchUpInside 이벤트를 addTarget(_:action:for:)을 호출하여 didPressDoneButton(_:) 작업 메서드에 연결해줍니다.
+        button.addTarget(self, action: #selector(didPressDoneButton(_:)), for: .touchUpInside)
+        button.id = reminder.id
         button.setImage(image, for: .normal)
         return UICellAccessory.CustomViewConfiguration(
             customView: button, placement: .leading(displayed: .always)) // 버튼을 셀의 어느 위치에 보여줄 지 설정해줍니다.
